@@ -1,0 +1,24 @@
+<!-- <h1>saad</h1> -->
+  <div *ngIf="book">
+    <div>
+        Name:
+        <input type="text" [(ngModel)]="book.bookName" placeholder="enter name ">
+    </div>
+    <div>
+        First Name:
+        <input type="text" [(ngModel)]="book.bookPrice" placeholder="enter First Name ">
+    </div>
+    <div>
+        Last Name:
+        <input type="text" [(ngModel)]="book.bookSize" placeholder="enter Last Name ">
+    </div>
+    <div>
+        Palce:
+        <input type="text" [(ngModel)]="book.bookSize" placeholder="enter Place">
+    </div>
+    <button (click)="UpdateBook(book)" *ngIf="book.bookId">Update</button>
+    <!-- <button (click)="AddBook(book)" *ngIf="!book.bookId">Add</button> -->
+</div>  
+    <!-- <button (click)="DelteHero(hero)" *ngIf="hero.id">Delete</button>
+    -->
+

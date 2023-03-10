@@ -1,0 +1,27 @@
+<!-- <h1>saad</h1> -->
+<div *ngIf="book">
+    <div>
+        Book Name:
+        <input type="text" [(ngModel)]="book.bookName" placeholder="enter name ">
+    </div>
+    <div>
+        Book Price:
+        <input type="text" [(ngModel)]="book.bookPrice" placeholder="enter First Name ">
+    </div>
+    <div>
+        Book Size(MB):
+        <input type="text" [(ngModel)]="book.bookSize" placeholder="enter Last Name ">
+    </div>
+    <div>
+        Palce:
+        <input type="text" [(ngModel)]="book.bookSize" placeholder="enter Place">
+    </div>
+    <label for="image" style="cursor: pointer;display: block;">Upload Image For book</label>
+    <input type="file" name="image" id="image" style="display: none;">
+    <label for="bookfile" style="cursor: pointer; display: block;">Upload book </label>
+    <input type="file" name="bookfile" id="bookfile" style="display: none;">
+    <button (click)="AddBook(book)" *ngIf="book">Add</button>
+    <!-- <button (click)="AddBook(book)" *ngIf="!book.bookId">Add</button> -->
+</div>
+<!-- <button (click)="DelteHero(hero)" *ngIf="hero.id">Delete</button>
+    -->
