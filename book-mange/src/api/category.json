@@ -1,0 +1,22 @@
+[
+    {
+      "categoryId": 1,
+      "categoryName": "Fantasy"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Mystery"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Science Fiction"
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Fantasy"
+    },
+    {
+      "categoryId": 5,
+      "categoryName": "Mystery"
+    }
+]

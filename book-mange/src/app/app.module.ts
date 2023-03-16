@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BookComponent } from './Book/book.component';
+import { BookComponent } from './Book/book-list-for-user/book.component';
 
 import { BookModule } from './Book/book.module';
 import { SharedModule } from './shared/shared.module';
@@ -25,7 +25,7 @@ import { AccountComponent } from './login/account.component';
         loadChildren: () =>
           import('./Book/book.module').then((b) => b.BookModule),
       },
-      // {path:'books',component:BookComponent},
+      {path:'books',component:BookComponent},
       //general path's
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' },

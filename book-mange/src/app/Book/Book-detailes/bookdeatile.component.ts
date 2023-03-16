@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap } from 'rxjs';
-import { IBook } from '../Book';
-import { BooksService } from '../book.service';
+import { IBook } from '../../model/Book';
+import { BooksService } from '../../services/book.service';
 
 @Component({
   selector: 'book-bookdeatile',

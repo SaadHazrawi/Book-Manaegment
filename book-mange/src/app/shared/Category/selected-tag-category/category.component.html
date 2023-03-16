@@ -1,0 +1,7 @@
+    <form [formGroup]="getCate">
+        <select class="form-select" (change)="onGetAfterSelect()" formControlName="getCategory">
+            <option *ngFor="let cat of cateo$" [ngValue]="cat.categoryId">
+                {{cat.categoryId}}-{{cat.categoryName}}
+            </option>
+        </select>
+    </form> 

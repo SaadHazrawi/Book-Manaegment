@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BookComponent } from './book.component';
+import { BookComponent } from './book-list-for-user/book.component';
 import { RouterModule } from '@angular/router';
 import { BookDetailComponent } from './Book-detailes/bookdeatile.component';
-import { EditBookComponent } from './Book-edit/edit-book.component';
-import { WriteEditBookComponent } from './Book-edit/write-edit-book/write-edit-book.component';
+ 
 import { SharedModule } from '../shared/shared.module';
-import { AddBookComponent } from './Book-edit/write-edit-book/add-book.component';
+import { ShowBookAdminComponent } from './Book-edit/show-book-detaile/show-inAdmin.component';
+import { WriteEditBookComponent } from './Book-edit/add-edit-book/edit-book/write-edit-book.component';
+import { AddBookComponent } from './Book-edit/add-edit-book/add-book/add-book.component';
 
 @NgModule({
   declarations: [
     BookComponent,
     BookDetailComponent,
-    EditBookComponent,
+    ShowBookAdminComponent,
     WriteEditBookComponent,
     AddBookComponent,
   ],
@@ -21,7 +22,7 @@ import { AddBookComponent } from './Book-edit/write-edit-book/add-book.component
     SharedModule,
     RouterModule.forChild([
       { path: 'books', component: BookComponent },
-      { path: 'mangebooks', component: EditBookComponent },
+      { path: 'mangebooks', component: ShowBookAdminComponent },
       {
         path: 'books/:id',
         component: BookDetailComponent,
@@ -30,7 +31,7 @@ import { AddBookComponent } from './Book-edit/write-edit-book/add-book.component
         path: 'write-book/:id',
         component: WriteEditBookComponent,
       },
-      {
+       {
         path: 'add-book',
         component: AddBookComponent,
       },

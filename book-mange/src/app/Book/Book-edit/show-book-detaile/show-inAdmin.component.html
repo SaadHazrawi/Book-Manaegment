@@ -1,0 +1,31 @@
+<table class="table" *ngIf="books">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Size</th>
+            <th>Descriptions</th>
+            <th> <button class="btn btn-success" (click)="AddBook()">Add Book</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td><img src="../../../favicon.ico" alt="">
+            </td>
+            <td>{{book.bookId}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.price| currency:"USD"}}</td>
+            <td>{{book.fileSize}}</td>
+            <td>{{book.description}}</td>
+            <td>
+                <button class="btn btn-dark" style="display: block; margin-bottom: 5px;"
+                    (click)="editBook(book)">EditBook</button>
+                <button class="btn btn-danger mx-3" (click)="deleteBook(book.bookId)"> Del</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>

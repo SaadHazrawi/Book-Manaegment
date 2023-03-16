@@ -1,0 +1,72 @@
+<div class="container">
+    <form [formGroup]="addForm">
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Author</label>
+            <book-author name="authName" (idAuthor)="getAuthorId($event)"></book-author>
+        </div>
+        <label for="catName" class="form-label">Category</label>
+        <book-category name="catName" (idCategory)="getCategoreyId($event)"></book-category>
+
+        <div class="mb-3">
+            <label class="form-label"> Name</label>
+            <input type="text" formControlName="name" placeholder="name" class="form-control">
+        </div>
+        <span *ngIf="addForm.controls['name'].dirty && addForm.hasError('required','name')" class="text-danger">The Name
+            book has been required</span>
+
+        <div class="mb-3">
+            <label class="form-label"> language</label>
+            <input type="text" formControlName="language" placeholder="language" class="form-control">
+        </div>
+        <span *ngIf="addForm.controls['language'].dirty && addForm.hasError('required','language')"
+            class="text-danger">The Name
+            book has been required</span>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" formControlName="price" placeholder="Enter Price The Book"
+                id="exampleInputEmail1">
+        </div>
+        <span *ngIf="addForm.controls['price'].dirty && addForm.hasError('required','price')" class="text-danger">The
+            Price book has been required</span>
+
+        <div class="mb-3">
+            <label class="form-label">pages</label>
+            <input type="number" class="form-control" formControlName="pages" placeholder="Enter Price The Book"
+                id="exampleInputEmail1">
+        </div>
+        <span *ngIf="addForm.controls['pages'].dirty && addForm.hasError('required','pages')" class="text-danger">The
+            Price book has been required</span>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">fileSize</label>
+            <input type="number" class="form-control" formControlName="fileSize" placeholder="Size">
+        </div>
+        <span *ngIf="addForm.controls['fileSize'].dirty && addForm.hasError('required','fileSize')"
+            class="text-danger">The
+            Price book has been required</span>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <input formControlName="description" max="10" type="text" class="form-control"
+                placeholder="Enter Short Description">
+            <span *ngIf="addForm.controls['description'].dirty && addForm.hasError('required','description')"
+                class="text-danger">The Description book has been required</span>
+            <span *ngIf="addForm.controls['description'].invalid  && addForm.hasError('max','description')"
+                class="text-danger">The Description for book Max Char is 150</span>
+        </div>
+        <div class="group-file mb-3">
+            <label for="imagePath" class="btn btn-success" style="margin-right: 10px;">UpLoad Image</label>
+
+            <input class="form-control" id="imagePath" name="imagePath" style="display:none" accept='image/*'
+                type="file" formControlName="imagePath" (change)="onFileChange($event)">
+            <label for="book" class="btn btn-success">UpLoad Book</label>
+            <input type="file" id="book" name="book" style="display:none">
+        </div>
+        <div class="group-button">
+            <button [disabled]="!addForm.valid || 
+            (catId==null || authId==null)" type="submit" class="btn btn-primary"
+                (click)="onAdd()">Add</button>
+            <button type="submit" class="btn btn-secondary mx-4" (click)="onback()">Go Back</button>
+        </div>
+    </form>
+</div>

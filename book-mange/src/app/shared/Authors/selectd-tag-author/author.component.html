@@ -1,0 +1,11 @@
+ 
+ 
+    <form [formGroup]="getAuth">
+
+        <select class="form-select" 
+        (change)="onGetAutherAfterSelect()" formControlName="getAuthors">
+            <option *ngFor="let auth of authors$" [ngValue]="auth.authorId">
+                {{auth.authorId}}-{{auth.authorName}}
+            </option>
+        </select>
+ 

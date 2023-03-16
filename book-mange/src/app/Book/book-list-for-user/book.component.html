@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mb-5" *ngFor="let book of books">
+            <div class="card" style="width: 18rem;">
+                <img src="../../favicon.ico" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.name}}</h5>
+                    <p class="card-text">{{book.description}}</p>
+                    <h3></h3>
+                    <a [routerLink]="['/books',book.bookId]" class="btn btn-primary">Read More</a>
+                    <span style="margin-left: 50px; font-weight: bold;font-size: 22px;">{{book.price|currency:"USD"}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
